@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebInfrastrutures
+namespace SE.WebInfrastrutures
 {
     public class Sartup
     {

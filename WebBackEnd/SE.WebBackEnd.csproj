@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-WebBackEnd-92ED7F6E-2EE8-43CD-8374-3C4B5B45FDB4</UserSecretsId>
+    <RootNamespace>SE.WebBackEnd</RootNamespace>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

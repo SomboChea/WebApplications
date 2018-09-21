@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace WebServices.Controllers
+namespace SE.WebServices.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -80,14 +80,11 @@ namespace WebServices.Controllers
         }
 
         [HttpPost("user")]
-        [Authorize(Roles ="User")]
-        public IActionResult User()
+        [Authorize(Roles = "User")]
+        public new IActionResult User() => Ok(new
         {
-            return Ok(new
-            {
-                result = "Success"
-            });
-        }
+            result = "Success"
+        });
 
         [HttpGet("test")]
         [Authorize]

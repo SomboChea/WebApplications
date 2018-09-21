@@ -1,7 +1,128 @@
 ﻿
-@{
-    ViewData["Title"] = "_Sidebar";
-}
-
-<h2>_Sidebar</h2>
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <div class="nav-link">
+                <div class="user-wrapper">
+                    <div class="profile-image">
+                        <img src="~/images/faces/face1.jpg" alt="profile image">
+                    </div>
+                    <div class="text-wrapper">
+                        <p class="profile-name">Mork Pin</p>
+                        <div>
+                            <small class="designation text-muted">Admin</small>
+                            <span class="status-indicator online"></span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-success btn-block">
+                    New Posts
+                    <i class="mdi mdi-plus"></i>
+                </button>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="~/Home">
+                <i class="menu-icon mdi mdi-television"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#customer" aria-expanded="false" aria-controls="customer">
+                <i class="menu-icon mdi mdi-nature-people"></i>
+                <span class="menu-title">Customers</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="customer">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Customers"> Manage </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Customers/Create"> Create </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Customers/Blocks"> Blocks </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="~/Products">
+                <i class="menu-icon mdi mdi-package"></i>
+                <span class="menu-title">Products</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="~/Orders">
+                <i class="menu-icon mdi mdi-orbit"></i>
+                <span class="menu-title">Orders</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="~/Reports">
+                <i class="menu-icon mdi mdi-chart-line"></i>
+                <span class="menu-title">Reports</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="~/Discounts">
+                <i class="menu-icon mdi mdi-professional-hexagon"></i>
+                <span class="menu-title">Discounts</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="~/Tracking">
+                <i class="menu-icon mdi mdi-sticker"></i>
+                <span class="menu-title">Tracking</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#emp" aria-expanded="false" aria-controls="emp">
+                <i class="menu-icon mdi mdi-stack-overflow"></i>
+                <span class="menu-title">Employees</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="emp">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Employees/Manage"> Manage </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Employees/Teams"> Teams </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Employees/Contact"> Contact </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#security" aria-expanded="false" aria-controls="security">
+                <i class="menu-icon mdi mdi-security"></i>
+                <span class="menu-title">Security</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="security">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Users"> Users </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Security/Groups"> Groups </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Security/Roles"> Roles </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Security/Logs"> Logs </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Security/Blocks"> Blocks </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav>
 
