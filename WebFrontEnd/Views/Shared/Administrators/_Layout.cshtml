@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html class="no-js h-100" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewData["title"] | Administrator</title>
+    <meta name="description" content="Administrator">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <partial name="~/Views/Shared/_AdminStyles.cshtml" />
+
+</head>
+<body class="h-100">
+    
+    <div class="container-fluid">
+        <div class="row">
+            
+            <partial name="~/Views/Shared/Administrators/_Sidebar.cshtml" />
+
+            <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+                
+                <partial name="~/Views/Shared/Administrators/_Navbar.cshtml" />
+
+                @RenderBody()
+                
+                <partial name="~/Views/Shared/Administrators/_Footer.cshtml" />
+            </main>
+        </div>
+    </div>
+
+    <partial name="~/Views/Shared/_AdminScripts.cshtml" />
+</body>
+</html>
