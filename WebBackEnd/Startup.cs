@@ -66,6 +66,10 @@ namespace SE.WebBackEnd
                             ctx.Request.Path = err + "?code=500";
                             await next();
                             break;
+                        case 502:
+                            ctx.Request.Path = err + "?code=502";
+                            await next();
+                            break;
                     }
                 }
 

@@ -22,16 +22,49 @@ namespace SE.WebFrontEnd
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist";
-            });
+            //In production, the Angular files will be served from this directory
+            //services.AddSpaStaticFiles(configuration =>
+            //{
+            //    configuration.RootPath = "ClientApp/dist";
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //Custom Handle errors
+            app.Use(async (ctx, next) =>
+            {
+                await next();
+                string originalPath = ctx.Request.Path.Value;
+                ctx.Items["originalPath"] = originalPath;
+                string err = "/Error.jsx";
+
+                if (!ctx.Response.HasStarted)
+                {
+                    switch (ctx.Response.StatusCode)
+                    {
+                        case 404:
+                            ctx.Request.Path = err;
+                            await next();
+                            break;
+                        case 403:
+                            ctx.Request.Path = err + "?code=403";
+                            await next();
+                            break;
+                        case 500:
+                            ctx.Request.Path = err + "?code=500";
+                            await next();
+                            break;
+                        case 502:
+                            ctx.Request.Path = err + "?code=502";
+                            await next();
+                            break;
+                    }
+                }
+                
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -44,7 +77,7 @@ namespace SE.WebFrontEnd
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+            //app.UseSpaStaticFiles();
 
             app.UseMvc(routes =>
             {
@@ -53,18 +86,18 @@ namespace SE.WebFrontEnd
                     template: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa =>
-            {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
+            //app.UseSpa(spa =>
+            //{
+            //    // To learn more about options for serving an Angular SPA from ASP.NET Core,
+            //    // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "ClientApp";
+            //    spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "start");
-                }
-            });
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseAngularCliServer(npmScript: "start");
+            //    }
+            //});
         }
     }
 }

@@ -23,64 +23,64 @@
             <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search">
         </div>
     </form>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper" id="mainMenu">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="~/Administrator">
+                <a class="nav-link @ViewData["link_home"]" href="~/Administrator">
                     <i class="material-icons">edit</i>
-                    <span>Dashboard</span>
+                    <span>Dashsboard</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Posts">
+                <a class="nav-link @ViewData["link_post"]" href="~/Administrator/Posts">
                     <i class="material-icons">vertical_split</i>
                     <span>Posts</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Posts/New">
+                <a class="nav-link @ViewData["link_post_new"]" href="~/Administrator/Posts/New">
                     <i class="material-icons">note_add</i>
                     <span>Add New Post</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Products">
+                <a class="nav-link @ViewData["link_product"]" href="~/Administrator/Products">
                     <i class="material-icons">table_chart</i>
                     <span>Products</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Reports">
+                <a class="nav-link @ViewData["link_report"]" href="~/Administrator/Reports">
                     <i class="material-icons">view_module</i>
                     <span>Reports</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Reports/Transactions">
+                <a class="nav-link @ViewData["link_report_transaction"]" href="~/Administrator/Reports/Transactions">
                     <i class="material-icons">view_module</i>
                     <span>Transactions</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Customers">
+                <a class="nav-link @ViewData["link_customer"]" href="~/Administrator/Customers">
                     <i class="material-icons">table_chart</i>
                     <span>Customers</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Tracking">
+                <a class="nav-link @ViewData["link_tracking"]" href="~/Administrator/Tracking">
                     <i class="material-icons">table_chart</i>
                     <span>Tracking</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Profile">
+                <a class="nav-link @ViewData["link_profile"]" href="~/Administrator/Profile">
                     <i class="material-icons">person</i>
                     <span>Profile</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="~/Administrator/Feedbacks">
+                <a class="nav-link @ViewData["link_feedback"]" href="~/Administrator/Feedbacks">
                     <i class="material-icons">error</i>
                     <span>Feedbacks</span>
                 </a>
