@@ -8,13 +8,12 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class DefaultController : Controller
     {
-        //[Route("About")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [Route("About", Name ="Home.About")]
+        [Route("About")]
         public IActionResult About() 
         {
             return View();
@@ -26,8 +25,8 @@ namespace SE.WebFrontEnd.Controllers
             return View();
         }
 
-        [Route("Blog")]
-        public IActionResult Blog()
+        [Route("Promotions")]
+        public IActionResult Promotion()
         {
             return View();
         }
