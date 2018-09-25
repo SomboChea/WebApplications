@@ -114,7 +114,7 @@ namespace SE.WebBackEnd
             });
 
             
-            string url = "https://localhost:44374/Error.jsx?code=404";
+            //string url = "https://localhost:44374/Error.jsx?code=404";
             //app.UseStatusCodePagesWithReExecute("/Home/Error.jsx?code={0}");
             
             //app.Use(async (context, next) =>

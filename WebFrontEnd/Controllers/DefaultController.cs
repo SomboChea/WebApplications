@@ -8,8 +8,26 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class DefaultController : Controller
     {
-        [Route("About")]
+        //[Route("About")]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Route("About", Name ="Home.About")]
+        public IActionResult About() 
+        {
+            return View();
+        }
+
+        [Route("Contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [Route("Blog")]
+        public IActionResult Blog()
         {
             return View();
         }

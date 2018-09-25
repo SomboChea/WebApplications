@@ -1624,6 +1624,12 @@
     <None Include="wwwroot\vendor\sweetalert\sweetalert.min.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\images\favicon.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
   <!-- <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
      Ensure Node.js is installed
     <Exec Command="node - -version" ContinueOnError="true">

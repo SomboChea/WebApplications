@@ -7,15 +7,18 @@
     <meta name="description" content="Administrator">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <partial name="~/Views/Shared/_ClientStyles" />
+    <partial name="~/Views/Shared/_ClientStyles.cshtml" />
 
 </head>
 <body class="animsition">
-    <partial name="~/Views/Shared/_Navbar" />
+    <partial name="~/Views/Shared/_Navbar.cshtml" />
 
     @RenderBody()
 
-    <partial name="~/Views/Shared/_Footer" />
-    <partial name="~/Views/Shared/_ClientScripts" />
+    <!-- Change Currency Selection -->
+	<div id="currencyChange"></div>
+
+    <partial name="~/Views/Shared/_Footer.cshtml" />
+    <partial name="~/Views/Shared/_ClientScripts.cshtml" />
 </body>
 </html>

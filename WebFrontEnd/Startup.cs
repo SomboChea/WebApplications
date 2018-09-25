@@ -21,7 +21,7 @@ namespace SE.WebFrontEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddRouting();
             //In production, the Angular files will be served from this directory
             //services.AddSpaStaticFiles(configuration =>
             //{
@@ -68,6 +68,7 @@ namespace SE.WebFrontEnd
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -83,7 +84,7 @@ namespace SE.WebFrontEnd
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    template: "{controller=Default}/{action=Index}/{id?}");
             });
 
             //app.UseSpa(spa =>
