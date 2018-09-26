@@ -1,49 +1,54 @@
-﻿<!-- header fixed -->
+﻿
+<!-- header fixed -->
 	<div class="wrap_header fixed-header2 trans-0-4">
 		<!-- Logo -->
 		<a href="~/" class="logo">
-			<img src="~/images/logo.png" alt="SECOMMERECE">
+			<img src="~/images/SECOM_Admin_DD2.png" alt="SECOMMERECE">
 		</a>
 
-		<!-- Menu -->
+		<!-- Fixed Menu -->
 		<div class="wrap_menu">
 			<nav class="menu">
-				<ul class="main_menu">
-					<li>
-						<a href="~/Categories">Categories</a>
-						<ul class="sub_menu">
-							<li><a href="#">Homepage V1</a></li>
-							<li><a href="#">Homepage V2</a></li>
-							<li><a href="#">Homepage V3</a></li>
-						</ul>
-					</li>
+                <ul class="main_menu">
+                    <li class="@ViewData["home"]">
+                        <a asp-route="Home"><i class="fa fa-home"></i></a>
+                    </li>
 
-					<li class="sale-noti">
-						<a href="~/Shop">Shop</a>
-					</li>
+                    <li class="@ViewData["category"]">
+                        <a asp-route="Category">Categories</a>
+                        <ul class="sub_menu">
+                            <li><a asp-route="">Computers</a></li>
+                            <li><a asp-route="">Smart Phone</a></li>
+                            <li><a asp-route="">Clothes</a></li>
+                        </ul>
+                    </li>
 
-					<li>
-						<a href="~/Sale">Sale</a>
-					</li>
+                    <li class="@ViewData["shop"]">
+                        <a asp-route="Shop">Shop</a>
+                    </li>
 
-					<li>
-						<a asp-controller="Default" asp-action="Promotion">Promotions</a>
-					</li>
+                    <li class="@ViewData["sale"]">
+                        <a asp-route="Sale">Sale</a>
+                    </li>
 
-					<li>
-						<a asp-controller="Default" asp-action="About">About</a>
-					</li>
-                        
-					<li>
-						<a asp-controller="Default" asp-action="Contact">Contact</a>
-					</li>
-				</ul>
+                    <li class="@ViewData["promotion"]">
+                        <a asp-route="Promotion">Promotions</a>
+                    </li>
+
+                    <li class="@ViewData["about"]">
+                        <a asp-route="About">About</a>
+                    </li>
+
+                    <li class="@ViewData["contact"]">
+                        <a asp-route="Contact">Contact</a>
+                    </li>
+                </ul>
 			</nav>
 		</div>
 
-		<!-- Header Icon -->
+		<!-- User Profile -->
 		<div class="header-icons">
-			<a href="~/Client/Profile" class="header-wrapicon1 dis-block">
+			<a asp-route="Profile" class="header-wrapicon1 dis-block">
 				<img src="~/images/icons/icon-header-01.png" class="header-icon1" alt="View Profile">
 			</a>
 
@@ -81,14 +86,14 @@
 					<div class="header-cart-buttons">
 						<div class="header-cart-wrapbtn">
 							<!-- Button -->
-							<a href="~/Client/Cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+							<a asp-route="Cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 								View Cart
 							</a>
 						</div>
 
 						<div class="header-cart-wrapbtn">
 							<!-- Button -->
-							<a href="~/Client/Checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+							<a asp-route="Checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 								Check Out
 							</a>
 						</div>
@@ -101,7 +106,7 @@
 	<!-- top notify -->
 	<div class="flex-c-m size22 bg0 s-text21 pos-relative">
 		20% off everything!
-		<a href="~/Shop" class="s-text22 hov6 p-l-5">
+		<a asp-route="Shop" class="s-text22 hov6 p-l-5">
 			Shop Now
 		</a>
 		<button class="flex-c-m pos2 size23 colorwhite eff3 trans-0-4 btn-romove-top-noti">
@@ -111,7 +116,7 @@
 
 	<!-- Header -->
 	<header class="header2">
-		<!-- Header desktop -->
+		<!-- Header Desktop Not Fixed -->
 		<div class="container-menu-header-v2 p-t-26">
 			<div class="topbar2">
 				<div class="topbar-social">
@@ -123,7 +128,7 @@
 				</div>
 
 				<!-- Logo2 -->
-				<a href="~/" class="logo2">
+				<a asp-route="Home" class="logo2">
 					<img src="~/images/SECOM_Admin_DD2.png" alt="SECOMMERCE">
 				</a>
 
@@ -139,8 +144,8 @@
 						</select>
 					</div>
 
-					<!--  -->
-					<a href="#" class="header-wrapicon1 dis-block m-l-30">
+					<!-- User Profile  -->
+					<a asp-route="Profile" class="header-wrapicon1 dis-block m-l-30">
 						<img src="~/images/icons/icon-header-01.png" class="header-icon1" alt="View Profile">
 					</a>
 
@@ -148,7 +153,7 @@
 
 					<div class="header-wrapicon2 m-r-13">
 						<img src="~/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="View Cart List">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti">1</span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
@@ -156,7 +161,7 @@
 
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
+										<img src="~/images/item-cart-03.jpg" alt="IMG">
 									</div>
 
 									<div class="header-cart-item-txt">
@@ -178,14 +183,14 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="~/Client/Cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a asp-route="Cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="~/Client/Checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a asp-route="Checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										Check Out
 									</a>
 								</div>
@@ -196,39 +201,43 @@
 			</div>
 
 			<div class="wrap_header">
-				<!-- Menu -->
+				<!-- Menu Desktop-->
 				<div class="wrap_menu">
 					<nav class="menu">
-						<ul class="main_menu">
-					        <li>
-						        <a href="~/Categories">Categories</a>
-						        <ul class="sub_menu">
-							        <li><a href="#">Homepage V1</a></li>
-							        <li><a href="#">Homepage V2</a></li>
-							        <li><a href="#">Homepage V3</a></li>
-						        </ul>
-					        </li>
+                        <ul class="main_menu">
+                            <li class="@ViewData["home"]">
+                                <a asp-route="Home"><i class="fa fa-home"></i></a>
+                            </li>
 
-					        <li class="sale-noti">
-						        <a href="~/Shop">Shop</a>
-					        </li>
+                            <li class="@ViewData["category"]">
+                                <a asp-route="Category">Categories</a>
+                                <ul class="sub_menu">
+                                    <li><a asp-route="">Computers</a></li>
+                                    <li><a asp-route="">Smart Phone</a></li>
+                                    <li><a asp-route="">Clothes</a></li>
+                                </ul>
+                            </li>
 
-					        <li>
-						        <a href="~/Sale">Sale</a>
-					        </li>
+                            <li class="@ViewData["shop"]">
+                                <a asp-route="Shop">Shop</a>
+                            </li>
 
-					        <li>
-						        <a href="~/Promotions">Promotions</a>
-					        </li>
+                            <li class="@ViewData["sale"]">
+                                <a asp-route="Sale">Sale</a>
+                            </li>
 
-					        <li>
-						        <a href="~/About">About</a>
-					        </li>
+                            <li class="@ViewData["promotion"]">
+                                <a asp-route="Promotion">Promotions</a>
+                            </li>
 
-					        <li>
-						        <a href="~/Contact">Contact</a>
-					        </li>
-				        </ul>
+                            <li class="@ViewData["about"]">
+                                <a asp-route="About">About</a>
+                            </li>
+
+                            <li class="@ViewData["contact"]">
+                                <a asp-route="Contact">Contact</a>
+                            </li>
+                        </ul>
 					</nav>
 				</div>
 
@@ -258,7 +267,7 @@
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti">1</span>
 
 						<!-- Header cart notify -->
 						<div class="header-cart header-dropdown">

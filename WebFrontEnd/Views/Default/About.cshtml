@@ -1,5 +1,8 @@
+@using SE.WebFrontEnd.Models
+
 @{
     ViewData["title"] = "About";
+    ViewData["about"] = @Navbar.MenuIsActive;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 

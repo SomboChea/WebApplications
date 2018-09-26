@@ -8,7 +8,7 @@
 
             <div>
                 <p class="s-text7 w-size27">
-                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                    Any questions? Let us know in store at St 110 SETECT Institute, Tel: 0769995149
                 </p>
 
                 <div class="flex-m p-t-30">
@@ -60,28 +60,23 @@
 
             <ul>
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Search
+                    <a asp-route="Home" class="s-text7">
+                        Home
                     </a>
                 </li>
 
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
+                    <a asp-route="About" class="s-text7">
                         About Us
                     </a>
                 </li>
 
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
+                    <a asp-route="Contact" class="s-text7">
                         Contact Us
                     </a>
                 </li>
 
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Returns
-                    </a>
-                </li>
             </ul>
         </div>
 
@@ -92,25 +87,25 @@
 
             <ul>
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
+                    <a asp-route="Tracking" class="s-text7">
                         Track Order
                     </a>
                 </li>
 
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
+                    <a asp-route="Return" class="s-text7">
                         Returns
                     </a>
                 </li>
 
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
+                    <a asp-route="Shipping" class="s-text7">
                         Shipping
                     </a>
                 </li>
 
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
+                    <a asp-route="Faq" class="s-text7">
                         FAQs
                     </a>
                 </li>
@@ -124,7 +119,7 @@
 
             <form>
                 <div class="effect1 w-size9">
-                    <input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com">
+                    <input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="username@example.com">
                     <span class="effect1-line"></span>
                 </div>
 
@@ -161,7 +156,7 @@
         </a>
 
         <div class="t-center s-text8 p-t-20">
-            Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            Copyright © @DateTime.Today.Year All rights reserved. | SE-Commerce.
         </div>
     </div>
 </footer>
