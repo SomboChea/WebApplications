@@ -9,7 +9,7 @@ namespace SE.WebFrontEnd.Controllers
     public class AuthController : Controller
     {
         [Route("Auth/Login", Name="Login")]
-        public IActionResult Index()
+        public IActionResult Login()
         {
             return View("~/Views/Administrators/Auth/Login.cshtml");
         }
@@ -24,6 +24,12 @@ namespace SE.WebFrontEnd.Controllers
         public IActionResult ResetPassword()
         {
             return View("~/Views/Administrators/Auth/ResetPassword.cshtml");
+        }
+
+        [Route("Auth/Logout", Name="Logout")]
+        public IActionResult Logout()
+        {
+            return RedirectToRoute("Home");
         }
     }
 }
