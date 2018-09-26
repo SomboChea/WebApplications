@@ -8,13 +8,13 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class PostsController : Controller
     {
-        [Route("Administrator/Posts")]
+        [Route("Administrator/Posts", Name="AdminPost")]
         public IActionResult Index()
         {
             return View("~/Views/Administrators/Posts/Index.cshtml");
         }
 
-        [Route("Administrator/Posts/New")]
+        [Route("Administrator/Posts/New", Name="AdminNewPost")]
         public IActionResult New()
         {
             return View("~/Views/Administrators/Posts/New.cshtml");

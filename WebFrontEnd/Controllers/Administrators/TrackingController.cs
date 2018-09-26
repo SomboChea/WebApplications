@@ -8,7 +8,7 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class TrackingController : Controller
     {
-        [Route("Administrator/Tracking")]
+        [Route("Administrator/Tracking", Name="AdminTracking")]
         public IActionResult Index()
         {
             return View("~/Views/Administrators/Tracking/Index.cshtml");

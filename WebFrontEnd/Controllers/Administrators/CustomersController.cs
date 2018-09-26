@@ -8,7 +8,7 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class CustomersController : Controller
     {
-        [Route("Administrator/Customers")]
+        [Route("Administrator/Customers", Name="AdminCustomer")]
         public IActionResult Index()
         {
             return View("~/Views/Administrators/Customers/Index.cshtml");

@@ -8,7 +8,7 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class FeedbacksController : Controller
     {
-        [Route("Administrator/Feedbacks")]
+        [Route("Administrator/Feedbacks", Name="AdminFeedback")]
         public IActionResult Index()
         {
             return View("~/Views/Administrators/Feedbacks/Index.cshtml");

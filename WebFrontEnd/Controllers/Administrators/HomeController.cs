@@ -8,7 +8,7 @@ namespace SE.WebFrontEnd.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("Administrator")]
+        [Route("Administrator", Name="Admin")]
         public IActionResult Index()
         {
             return View("~/Views/Administrators/Home/Index.cshtml");
