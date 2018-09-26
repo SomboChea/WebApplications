@@ -20,12 +20,6 @@ namespace SE.WebFrontEnd.Controllers
             return View("~/Views/Administrators/Auth/Register.cshtml");
         }
 
-        [Route("Auth/ResetPassword", Name="ResetPassword")]
-        public IActionResult ResetPassword()
-        {
-            return View("~/Views/Administrators/Auth/ResetPassword.cshtml");
-        }
-
         [Route("Auth/Logout", Name="Logout")]
         public IActionResult Logout()
         {
