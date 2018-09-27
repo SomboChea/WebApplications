@@ -8,7 +8,7 @@ namespace SE.WebBackEnd.Controllers
 {
     public class TrackingController : Controller
     {
-        [Route("Tracking")]
+        [Route("Tracking", Name="Tracking")]
         public IActionResult Index()
         {
             return View();

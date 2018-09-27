@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@ViewData["Title"] - SE-Commerce</title>
     <link rel="shortcut icon" href="~/images/favicon.png" />
-    <partial name="_BackEndStyles" />
+    <partial name="_StarAdminStyles" />
+
+    @RenderSection("css", required: false)
 
 </head>
 
@@ -16,37 +18,27 @@
     @*<partial name="_CookieConsentPartial" />*@
 
     <div class="container-scroller">
-
-        <!-- partial:partials/_navbar.html -->
         <partial name="_Navbar" />
-
-        <!-- partial -->
         <div class="container-fluid page-body-wrapper">
 
-            <!-- partial:partials/_sidebar.html -->
             <partial name="_Sidebar" />
 
-            <!-- partial -->
             <div class="main-panel">
 
-                <div class="content-wrapper">
+                <!-- Main Content -->
+                <div class="content-wrapper @RenderSection("wrapper-inject")">
                     @RenderBody()
                 </div>
-                <!-- content-wrapper ends -->
+                <!-- ./Main Content -->
 
-                <!-- partial:partials/_footer.html -->
                 <partial name="_Footer" />
-
-                <!-- partial -->
             </div>
-            <!-- main-panel ends -->
         </div>
-        <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
+    
+    <partial name="_StarAdminScripts" />
 
-    <partial name="_BackEndScripts" />
+    @RenderSection("js", required: false)
 
-    @RenderSection("Scripts", required: false)
 </body>
 </html>

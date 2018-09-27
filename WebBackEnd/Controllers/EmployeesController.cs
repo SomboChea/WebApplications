@@ -8,19 +8,19 @@ namespace SE.WebBackEnd.Controllers
 {
     public class EmployeesController : Controller
     {
-        [Route("Employees/Manage")]
+        [Route("Employees/Manage", Name="Employees")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [Route("Employees/Teams")]
+        [Route("Employees/Teams", Name="Employees.Teams")]
         public IActionResult Teams()
         {
             return View();
         }
 
-        [Route("Employees/Contact")]
+        [Route("Employees/Contact", Name="Employees.Contact")]
         public IActionResult Contact()
         {
             return View();

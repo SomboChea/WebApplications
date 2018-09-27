@@ -8,31 +8,32 @@ namespace SE.WebBackEnd.Controllers
 {
     public class SecurityController : Controller
     {
-        
+
+        [Route("Security", Name="Security")]        
         public IActionResult Index()
         {
             return View();
         }
 
-        [Route("Security/Groups")]
+        [Route("Security/Groups", Name="Security.Groups")]
         public IActionResult Groups()
         {
             return View();
         }
 
-        [Route("Security/Roles")]
+        [Route("Security/Roles", Name="Security.Roles")]
         public IActionResult Roles()
         {
             return View();
         }
 
-        [Route("Security/Logs")]
+        [Route("Security/Logs", Name="Security.Logs")]
         public IActionResult Logs()
         {
             return View();
         }
 
-        [Route("Security/Blocks")]
+        [Route("Security/Blocks", Name="Security.Blocks")]
         public IActionResult Blocks()
         {
             return View();

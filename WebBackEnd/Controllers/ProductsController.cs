@@ -8,7 +8,7 @@ namespace SE.WebBackEnd.Controllers
 {
     public class ProductsController : Controller
     {
-        [Route("Products")]
+        [Route("Products", Name="Products")]
         public IActionResult Index()
         {
             return View();

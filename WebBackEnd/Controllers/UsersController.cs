@@ -8,7 +8,7 @@ namespace SE.WebBackEnd.Controllers
 {
     public class UsersController : Controller
     {
-        [Route("Users")]
+        [Route("Users", Name="Users")]
         public IActionResult Index()
         {
             return View();

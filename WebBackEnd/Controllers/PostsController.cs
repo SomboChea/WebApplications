@@ -8,13 +8,13 @@ namespace SE.WebBackEnd.Controllers
 {
     public class PostsController : Controller
     {
-        [Route("Posts/New")]
+        [Route("Posts/New", Name="Posts")]
         public IActionResult Index()
         {
             return View();  
         }
 
-        [Route("Posts/Create")]
+        [Route("Posts/Create", Name="Posts.Create")]
         public IActionResult Create()
         {
             return View();

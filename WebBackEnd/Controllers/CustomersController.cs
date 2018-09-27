@@ -10,19 +10,19 @@ namespace SE.WebBackEnd.Controllers
     public class CustomersController : Controller
     {
         [Authorize]
-        [Route("Customers")]
+        [Route("Customers", Name="Customers")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [Route("Customers/Create")]
+        [Route("Customers/Create", Name="Customers.Create")]
         public IActionResult Create()
         {
             return View();
         }
 
-        [Route("Customers/Blocks")]
+        [Route("Customers/Blocks", Name="Customers.Blocks")]
         public IActionResult Blocks()
         {
             return View();

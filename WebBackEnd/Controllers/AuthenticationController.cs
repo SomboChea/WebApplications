@@ -8,19 +8,19 @@ namespace SE.WebBackEnd.Controllers
 {
     public class AuthController : Controller
     {
-        [Route("Auth/Login")]
+        [Route("Auth/Login", Name="Login")]
         public IActionResult Index()
         {
             return View("Login");
         }
 
-        [Route("Auth/Register")]
+        [Route("Auth/Register", Name="Register")]
         public IActionResult Register()
         {
             return View("Register");
         }
 
-        [Route("Auth/Signout")]
+        [Route("Auth/Signout", Name="Logout")]
         public IActionResult Signout()
         {
             return Redirect("~/Auth/Login");
