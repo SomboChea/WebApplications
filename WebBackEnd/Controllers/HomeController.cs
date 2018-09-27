@@ -11,7 +11,7 @@ namespace SE.WebBackEnd.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("Home", Name="Home")]
+        [Route("", Name="Home")]
         public IActionResult Index()
         {
             return View();

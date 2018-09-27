@@ -22,7 +22,7 @@
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="~/Home">
+            <a class="nav-link active" asp-route="Home">
                 <i class="menu-icon mdi mdi-television"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -36,46 +36,43 @@
             <div class="collapse" id="customer">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Customers"> Manage </a>
+                        <a class="nav-link" asp-route="Customers"> Manage </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Customers/Create"> Create </a>
+                        <a class="nav-link" asp-route="Customers.Create"> Create </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Customers/Inbox"> Inbox </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="~/Customers/Blocks"> Blocks </a>
+                        <a class="nav-link" asp-route="Customers.Inbox"> Inbox </a>
                     </li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/Products">
+            <a class="nav-link" asp-route="Products">
                 <i class="menu-icon mdi mdi-package"></i>
                 <span class="menu-title">Products</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/Orders">
+            <a class="nav-link" asp-route="Orders">
                 <i class="menu-icon mdi mdi-orbit"></i>
                 <span class="menu-title">Orders</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/Reports">
+            <a class="nav-link" asp-route="Reports">
                 <i class="menu-icon mdi mdi-chart-line"></i>
                 <span class="menu-title">Reports</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/Discounts">
+            <a class="nav-link" asp-route="Discounts">
                 <i class="menu-icon mdi mdi-professional-hexagon"></i>
                 <span class="menu-title">Discounts</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="~/Tracking">
+            <a class="nav-link" asp-route="Tracking">
                 <i class="menu-icon mdi mdi-sticker"></i>
                 <span class="menu-title">Tracking</span>
             </a>
@@ -89,13 +86,13 @@
             <div class="collapse" id="emp">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Employees/Manage"> Manage </a>
+                        <a class="nav-link" asp-route="Employees"> Manage </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Employees/Teams"> Teams </a>
+                        <a class="nav-link" asp-route="Employees.Teams"> Teams </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Employees/Contact"> Contact </a>
+                        <a class="nav-link" asp-route="Employees.Contact"> Contact </a>
                     </li>
                 </ul>
             </div>
@@ -109,19 +106,22 @@
             <div class="collapse" id="security">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Users"> Users </a>
+                        <a class="nav-link" asp-route="Users"> Users </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Security/Groups"> Groups </a>
+                        <a class="nav-link" asp-route="Security.Groups"> Groups </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Security/Roles"> Roles </a>
+                        <a class="nav-link" asp-route="Security.Roles"> Roles </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Security/Logs"> Logs </a>
+                        <a class="nav-link" asp-route="Security.Logs"> Logs </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="~/Security/Blocks"> Blocks </a>
+                        <a class="nav-link" asp-route="Security.Blocks"> Blocks </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-route="Security"> Rules & Privacy </a>
                     </li>
                 </ul>
             </div>

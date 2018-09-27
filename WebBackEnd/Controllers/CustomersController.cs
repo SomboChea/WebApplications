@@ -22,8 +22,8 @@ namespace SE.WebBackEnd.Controllers
             return View();
         }
 
-        [Route("Customers/Blocks", Name="Customers.Blocks")]
-        public IActionResult Blocks()
+        [Route("Customers/Inbox", Name="Customers.Inbox")]
+        public IActionResult Inbox()
         {
             return View();
         }
