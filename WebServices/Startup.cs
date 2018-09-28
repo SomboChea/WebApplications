@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -18,8 +19,13 @@ namespace SE.WebServices
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        ILogger logger;
+        IFormatter formatter;
+
+        public Startup(ILoggerFactory loggerFactory, IFormatter formatter, IConfiguration configuration)
         {
+            this.logger = loggerFactory.CreateLogger<Startup>();
+            this.formatter = formatter;
             Configuration = configuration;
         }
 
@@ -29,7 +35,7 @@ namespace SE.WebServices
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfiguration>(Configuration);
-
+            logger.LogDebug($"Total Services Initially: {services.Count}");
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(option => option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -52,8 +58,9 @@ namespace SE.WebServices
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IFormatter formatter)
         {
+            logger.LogDebug("Configure() started...");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -66,6 +73,21 @@ namespace SE.WebServices
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseMvc();
+            logger.LogDebug("Configure() complete.");
         }
     }
+
+    public interface IFormatter
+    {
+        string Format(string input);
+    }
+
+    public class LowercaseFormatter : IFormatter
+    {
+        public string Format(string input)
+        {
+            return input.ToLower();
+        }
+    }
+
 }
