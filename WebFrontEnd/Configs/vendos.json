@@ -1,0 +1,12 @@
+{
+  "onetech": {
+    "css": {
+      "bootstrap": "~/vendor/onetech/css/bootstrap.min.css",
+      "s": "s"
+    },
+    "js": {
+      "bootstrap": "~/vendor/onetech/js/bootstrap.min.js",
+      "s": "s" 
+    } 
+  } 
+}

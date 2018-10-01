@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SE.WebFrontEnd.Configs;
 
 namespace SE.WebFrontEnd
 {
@@ -27,6 +28,9 @@ namespace SE.WebFrontEnd
             //{
             //    configuration.RootPath = "ClientApp/dist";
             //});
+
+            services.Configure<AssetConfig>(Configuration.GetSection("Statics"));
+            //services.Configure<Language>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

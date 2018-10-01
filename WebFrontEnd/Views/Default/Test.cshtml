@@ -1,0 +1,13 @@
+@using Microsoft.Extensions.Configuration
+@using SE.WebFrontEnd.Configs
+@inject IConfiguration Configuration
+
+@{
+    ViewData["title"] = "About";
+    ViewData["about"] = @SE.WebFrontEnd.Models.Navbar.MenuIsActive;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>About: @Configuration.GetSection("Test")["Name"]</h2>
+
+<h2>About 2: @Configuration.GetSection(Language.Current)["Home"]</h2>

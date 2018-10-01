@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["title"] | SE-Commerce</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SE-Commerce Online Shopping for Customers to Customers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <partial name="~/Views/FrontEnd/Shared/_MainStyles.cshtml" />
+
+</head>
+
+<body>
+    
+    <div class="super_container">
+        <partial name="~/Views/FrontEnd/Shared/_Header.cshtml" />
+    
+        @RenderBody()
+
+        <partial name="~/Views/FrontEnd/Shared/_Newsletter.cshtml" />
+        <partial name="~/Views/FrontEnd/Shared/_Footer.cshtml" />
+    </div>
+
+    <partial name="~/Views/FrontEnd/Shared/_MainScripts.cshtml" />
+</body>
+</html>
