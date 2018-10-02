@@ -9,11 +9,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using SE.WebInfrastrutures.Data;
 
 namespace SE.WebServices
 {
@@ -37,24 +39,26 @@ namespace SE.WebServices
             services.AddSingleton<IConfiguration>(Configuration);
             logger.LogDebug($"Total Services Initially: {services.Count}");
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(option => option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidateLifetime = false,
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(option => option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            //    {
+            //        ValidateIssuer = true,
+            //        ValidateAudience = true,
+            //        ValidateIssuerSigningKey = true,
+            //        ValidateLifetime = false,
             
-                    ValidIssuer = "serverwebaddress",
-                    ValidAudience = "clientwebaddress",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTsecretkey"]))
-                });
+            //        ValidIssuer = "serverwebaddress",
+            //        ValidAudience = "clientwebaddress",
+            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTsecretkey"]))
+            //    });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
 
-            Console.WriteLine("Start\n\n" + Configuration["JWTsecretkey"] + "\nEnd");
+            //Console.WriteLine("Start\n\n" + Configuration["JWTsecretkey"] + "\nEnd");
 
+            services.AddDbContext<SEDbContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("SECommerceDB")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +75,7 @@ namespace SE.WebServices
             }
 
             app.UseHttpsRedirection();
-            app.UseAuthentication();
+            //app.UseAuthentication();
             app.UseMvc();
             logger.LogDebug("Configure() complete.");
         }

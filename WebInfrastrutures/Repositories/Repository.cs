@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SE.WebInfrastrutures.Data;
 
 namespace SE.WebInfrastrutures.Repositories
 {
