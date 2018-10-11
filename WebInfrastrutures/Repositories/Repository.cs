@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using SE.WebInfrastrutures.Data;
 
 namespace SE.WebInfrastrutures.Repositories
@@ -21,7 +22,8 @@ namespace SE.WebInfrastrutures.Repositories
 
         public void Create(T enity)
         {
-            _context.Add(enity);
+            _context.Entry(enity).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+            //_context.Add(enity);
             Save();
         }   
 
@@ -35,7 +37,7 @@ namespace SE.WebInfrastrutures.Repositories
 
         public IEnumerable<T> GetAll() => _context.Set<T>();
 
-        public T GetById(int id) => _context.Set<T>().Find(id);
+        public T GetById(object id) => _context.Set<T>().Find(id);
 
         public void Update(T enity)
         {

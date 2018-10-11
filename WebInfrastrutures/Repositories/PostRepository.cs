@@ -31,7 +31,7 @@ namespace SE.WebInfrastrutures.Repositories
             throw new NotImplementedException();
         }
 
-        public T GetById(int id)
+        public T GetById(object id)
         {
             throw new NotImplementedException();
         }

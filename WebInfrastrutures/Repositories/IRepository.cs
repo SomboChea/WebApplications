@@ -8,7 +8,7 @@ namespace SE.WebInfrastrutures.Repositories
     {
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Func<T, bool> predicate);
-        T GetById(int id);
+        T GetById(object id);
         void Create(T enity);
         void Update(T enity);
         void Delete(T enity);
